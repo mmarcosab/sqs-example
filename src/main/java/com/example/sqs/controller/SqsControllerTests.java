@@ -37,6 +37,6 @@ public class SqsControllerTests {
 
     @DeleteMapping(value = "/{queueName}")
     public ResponseEntity<?> deleteMessage(@PathVariable final String queueName){
-        return ResponseEntity.ok(sqsService.removeQueue( queueName));
+        return ResponseEntity.ok(sqsService.removeQueue("http://localhost:4566/000000000000/" + queueName));
     }
 }
